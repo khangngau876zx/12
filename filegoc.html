@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>Chúc mừng Ngày Nhà giáo Việt Nam 20/11</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Pacifico&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 30px;
+            background: linear-gradient(135deg, #ffffff);
+            font-family: 'Quicksand', sans-serif;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .intro {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            padding: 20px;
+            height: calc(100vh - 40px);
+            overflow-y: hidden;
+        }
+
+        .intro-s {
+            margin-bottom: 50px;
+        }
+
+        .intro-text {
+            margin-top: 50px;
+        }
+
+        .intro-img {
+            width: 120px;
+            height: auto;
+            border-radius: 12px;
+        }
+
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 30px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            z-index: 1;
+            animation: slideUp 0.8s ease-out;
+            backdrop-filter: blur(10px);
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header h1 {
+            font-size: 22px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 25px;
+            animation: fadeIn 1s ease-in;
+            background: linear-gradient(135deg, #667eea 0%, #eb7272 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header h1 .emoji {
+            -webkit-text-fill-color: initial;
+            font-size: 24px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            left: 100%;
+            opacity: 0;
+            transition: all 1s ease;
+        }
+
+        .slide.active {
+            left: 0;
+            opacity: 1;
+        }
+
+        .slide.prev {
+            left: -100%;
+            opacity: 0;
+        }
+
+        .message-box {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            border-radius: 20px;
+            padding: 20px;
+            width: 100%;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        #message {
+            font-size: 18px;
+            font-weight: 800;
+            color: #4a2c2a;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .fall {
+            position: fixed;
+            top: -50px;
+            font-size: 24px;
+            animation: fallStraight linear infinite;
+            opacity: 0.8;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        @keyframes fallStraight {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(100vh);
+                opacity: 0.3;
+            }
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: #474747;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            z-index: 10;
+        }
+
+        @media (max-width: 768px) {
+
+            html,
+            body {
+                overflow-x: hidden !important;
+                width: 100%;
+            }
+
+            * {
+                max-width: 100%;
+                top: 50px;
+            }
+
+            .intro {
+                width: 100%;
+                padding: 15px;
+                text-align: center;
+                margin: 0 auto;
+            }
+
+            .intro-img {
+                width: 45%;
+                max-width: 200px;
+                margin: 0 auto;
+                display: block;
+            }
+
+            .intro-text {
+                margin-top: 40px;
+                font-size: 18px;
+                text-align: center;
+            }
+
+            .card {
+                width: 92%;
+                margin: 0 auto;
+                padding: 20px;
+                border-radius: 25px;
+                box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+            }
+
+            .header h1 {
+                font-size: 20px;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            .image-container {
+                width: 100%;
+                aspect-ratio: 16 / 9;
+                border-radius: 18px;
+                margin: 0 auto 20px auto;
+                position: relative;
+            }
+
+            .slide {
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                left: 0 !important;
+                object-fit: cover;
+            }
+
+            .message-box {
+                width: 100%;
+                padding: 16px;
+                border-radius: 18px;
+            }
+
+            #message {
+                font-size: 16px;
+                line-height: 1.5;
+                text-align: center;
+            }
+
+            .fall {
+                font-size: 18px;
+                animation-duration: 3.5s;
+            }
+
+            .footer {
+                bottom: 10px;
+                font-size: 14px;
+                left: 50% !important;
+                transform: translateX(-50%) !important;
+                width: max-content;
+                text-align: center;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 420px) {
+
+            .card {
+                padding: 16px;
+                width: 94%;
+            }
+
+            .intro-img {
+                width: 55%;
+            }
+
+            #message {
+                font-size: 15px;
+            }
+
+            .header h1 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div id="intro" class="intro">
+        <!-- <h2 class="intro-s">Chạm nhẹ vào bông hoa</h2> -->
+        <img src="./assets/h5.png" class="intro-img" />
+        <h2 class="intro-text">💐 Chạm nhẹ vào bông hoa 💐</h2>
+    </div>
+
+    <div id="mainCard" style="display: none;">
+        <div class="card">
+            <div class="header">
+                <h1>
+                    <!-- Sửa lời chúc đầu -->
+                    <span class="emoji">🌺</span>
+                    Chúc mừng Ngày Nhà giáo Việt Nam 20/11
+                    <span class="emoji">🌺</span></br>
+                </h1>
+            </div>
+            <div style="z-index: 9999;" class="image-container">
+                <!-- Sửa ảnh chuyển tiếp -->
+                <img class="slide active" src="./assets/1.jpg" alt="Kỷ niệm 1">
+                <img class="slide" src="./assets/2.jpg" alt="Kỷ niệm 2">
+                <img class="slide" src="./assets/3.jpg" alt="Kỷ niệm 3">
+            </div>
+            <div class="message-box">
+                <div id="message"></div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div>Thiết kế đầy yêu thương dành tặng Thầy Cô</div>
+            <!-- Code này phục vụ cộng đồng không bán mong mọi người không lợi dụng để kinh doanh -->
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("intro").addEventListener("click", () => {
+            document.getElementById("intro").style.display = "none";
+            document.getElementById("mainCard").style.display = "block";
+
+            // Thêm xóa icon rơi xuống ở đây
+            const icons = ["🌼", "🌷", "💐"];
+            setInterval(() => {
+                const icon = document.createElement("div");
+                icon.classList.add("fall");
+                icon.innerText = icons[Math.floor(Math.random() * icons.length)];
+                icon.style.left = Math.random() * 100 + "%";
+                icon.style.animationDuration = (Math.random() * 2 + 4) + "s"; 
+                document.body.appendChild(icon); 
+                setTimeout(() => icon.remove(), 10000);
+            }, 1000); 
+
+            typeMessage();
+        });
+        
+        const slides = document.querySelectorAll(".slide");
+        let current = 0;
+        function nextSlide() {
+            slides[current].classList.remove("active");
+            slides[current].classList.add("prev");
+            current = (current + 1) % slides.length;
+            slides[current].classList.add("active");
+            slides[current].classList.remove("prev");
+        }
+        setInterval(nextSlide, 4000);
+
+        /* Sử Lời nhắn ở đây */
+        const messages = [
+            "Kính gửi Thầy Sinh kính mến!",
+            "Nhân ngày Nhà giáo Việt Nam 20/11,",
+            "Chúng em muốn gửi lời cảm ơn đặc biệt đến sự bao dung của Thầy.",
+            "Và kiên nhẫn với những sai lầm thuở học trò của chúng em. ❤️",
+            "chính vì sự tha thứ và thấu hiểu đó,",
+            "Mà chúng em có thể trưởng thành và hoàn thiện hơn từng ngày. 🌱",
+            "Chúc Thầy luôn mạnh khỏe, hạnh phúc và thành công trong cuộc sống! 🎉"
+        ];
+        let msgIndex = 0;
+        let charIndex = 0;
+        const msgContainer = document.getElementById("message");
+
+        function typeMessage() {
+            if (charIndex < messages[msgIndex].length) {
+                msgContainer.innerHTML += messages[msgIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(typeMessage, 60);
+            } else {
+                setTimeout(() => {
+                    msgIndex = (msgIndex + 1) % messages.length;
+                    msgContainer.innerHTML = "";
+                    charIndex = 0;
+                    typeMessage();
+                }, 3500);
+            }
+        }
+    </script>
+</body>
+
+</html>
